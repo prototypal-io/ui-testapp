@@ -1,1 +1,57 @@
-{{outlet}}
+<h1>Field</h1>
+
+{{#ui-panel as |panel|}}
+  {{#panel.titlebar}}
+    Input
+  {{/panel.titlebar}}
+
+  {{#panel.content}}
+    {{#ui-field size="small" as |f|}}
+      {{#f.label}}
+        Small
+      {{/f.label}}
+      {{#f.description}}
+        This is an example of a field description.
+      {{/f.description}}
+      {{f.input value=address placeholder="Type something..."}}
+    {{/ui-field}}
+
+    {{#ui-field as |f|}}
+      {{#f.label}}
+        Medium
+      {{/f.label}}
+      {{#f.description}}
+        This is an example of a field description.
+      {{/f.description}}
+      {{f.input value=address placeholder="Type something..."}}
+    {{/ui-field}}
+
+    {{#ui-field size="large" as |f|}}
+      {{#f.label}}
+        Large
+      {{/f.label}}
+      {{#f.description}}
+        This is an example of a field description.
+      {{/f.description}}
+      {{f.input value=address placeholder="Type something..."}}
+    {{/ui-field}}
+
+    <h2>Disabled</h2>
+
+    {{#ui-field as |f|}}
+      {{#f.label}}
+        Disabled
+      {{/f.label}}
+      {{f.input value=address placeholder="Type something..." disabled=true}}
+    {{/ui-field}}
+
+    <h2>Error</h2>
+
+    {{#ui-field as |f|}}
+      {{#f.label}}
+        Error State
+      {{/f.label}}
+      {{f.input value=address placeholder="Type something..." error=true errorMessage="FML"}}
+    {{/ui-field}}
+  {{/panel.content}}
+{{/ui-panel}}
